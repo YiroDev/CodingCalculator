@@ -1,4 +1,4 @@
-package com.example.codingcalculator;
+package com.tpavlik.codingcalculator;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -49,8 +49,24 @@ public class ShannonFanoMethod {
             a.add(b.get(0));
             b.remove(0);
         }
-        a.forEach(item -> item.setBit("1"));
-        b.forEach(item -> item.setBit("0"));
+        for (int i = 0; i < a.size(); i++) {
+            if (i == a.size() - 1) {
+                a.get(i).setBit("__1__|");
+                a.get(i).setResultBit("1");
+                continue;
+            }
+            a.get(i).setBit(String.format("%4s %3s", "1", "|"));
+            a.get(i).setResultBit("1");
+        }
+        for (int i = 0; i < b.size(); i++) {
+            if (i == b.size() - 1) {
+                b.get(i).setBit("__0__|");
+                b.get(i).setResultBit("0");
+                continue;
+            }
+            b.get(i).setBit(String.format("%4s %3s", "0", "|"));
+            b.get(i).setResultBit("0");
+        }
         split(a);
         split(b);
     }
@@ -59,11 +75,13 @@ public class ShannonFanoMethod {
         return items.stream().map(Item::getProbability).mapToDouble(Double::doubleValue).sum();
     }
 
-    public boolean validate(List<Item> items) {
+    public void validate(List<Item> items) throws Exception {
         if (sumDouble(items) != 1.0f) {
-            System.out.println("Sum of probabilities must be equal to 1");
-            return false;
+            throw new Exception("Sum of probabilities must be equal to 1");
         }
-        return true;
+    }
+
+    private String underline(String value) {
+        return "\033[4m" + value + "\033[0m";
     }
 }

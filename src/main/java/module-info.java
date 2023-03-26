@@ -3,6 +3,6 @@ module com.example.codingcalculator {
     requires javafx.fxml;
 
 
-    opens com.example.codingcalculator to javafx.fxml;
-    exports com.example.codingcalculator;
+    opens com.tpavlik.codingcalculator to javafx.fxml;
+    exports com.tpavlik.codingcalculator;
 }

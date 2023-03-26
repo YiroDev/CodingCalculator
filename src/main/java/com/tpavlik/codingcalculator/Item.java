@@ -1,4 +1,4 @@
-package com.example.codingcalculator;
+package com.tpavlik.codingcalculator;
 
 public class Item implements Comparable<Item> {
 
@@ -6,12 +6,15 @@ public class Item implements Comparable<Item> {
 
     private String bitArray;
 
+    private String resultBit;
+
     private String name;
 
     public Item(String name, Double probability) {
         this.name = name;
         this.probability = probability;
         this.bitArray = "";
+        this.resultBit = "";
     }
 
     public Double getProbability() {
@@ -30,8 +33,16 @@ public class Item implements Comparable<Item> {
         this.bitArray += bitArray;
     }
 
+    public void setResultBit(String resultBit) {
+        this.resultBit += resultBit;
+    }
+
     public int countOfBits() {
         return bitArray.length();
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override
@@ -41,6 +52,6 @@ public class Item implements Comparable<Item> {
 
     @Override
     public String toString() {
-        return name + ": " + bitArray;
+        return name + "\t|" + bitArray + "\t(" + resultBit + ")";
     }
 }
