@@ -37,8 +37,12 @@ public class Item implements Comparable<Item> {
         this.resultBit += resultBit;
     }
 
+    public String getResultBit() {
+        return resultBit;
+    }
+
     public int countOfBits() {
-        return bitArray.length();
+        return resultBit.length();
     }
 
     public String getName() {
@@ -52,6 +56,6 @@ public class Item implements Comparable<Item> {
 
     @Override
     public String toString() {
-        return name + "\t|" + bitArray + "\t(" + resultBit + ")";
+        return name + "\t|" + bitArray;
     }
 }

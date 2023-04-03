@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>C:\Users\tpavlik\Desktop\MyProjects\CodingCalculator\out\artifacts\CodingCalculator_jar\CodingCalculator.jar</jar>
+  <outfile>C:\Users\tpavlik\Desktop\CodingCalculator.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl></downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>C:\Users\tpavlik\Desktop\MyProjects\CodingCalculator\src\main\resources\calculator.ico</icon>
+  <jre>
+    <path>C:\Users\tpavlik\.jdks\openjdk-17.0.2</path>
+    <requiresJdk>false</requiresJdk>
+    <requires64Bit>false</requires64Bit>
+    <minVersion>17</minVersion>
+    <maxVersion></maxVersion>
+  </jre>
+</launch4jConfig>

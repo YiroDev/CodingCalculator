@@ -3,6 +3,7 @@ package com.tpavlik.codingcalculator;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -15,6 +16,7 @@ public class CodingCalculator extends Application {
         stage.setResizable(false);
         stage.setTitle("Coding calculator");
         stage.setScene(scene);
+        stage.getIcons().add(new Image("calculator.png"));
         stage.show();
     }
 

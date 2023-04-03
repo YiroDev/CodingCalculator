@@ -71,7 +71,7 @@ public class ShannonFanoMethod {
         split(b);
     }
 
-    private double sumDouble(List<Item> items) {
+    public double sumDouble(List<Item> items) {
         return items.stream().map(Item::getProbability).mapToDouble(Double::doubleValue).sum();
     }
 
@@ -79,6 +79,24 @@ public class ShannonFanoMethod {
         if (sumDouble(items) != 1.0f) {
             throw new Exception("Sum of probabilities must be equal to 1");
         }
+    }
+
+    public String codingLength(List<Item> items) {
+        double codingWordLength = 0;
+        for (Item item : items) {
+            codingWordLength += item.getProbability() * item.countOfBits();
+        }
+        return String.format("%.2f", codingWordLength);
+    }
+
+    public String codeEffectivity(List<Item> items) {
+        double entropy = 0;
+        double length = 0;
+        for (Item item : items) {
+            entropy -= item.getProbability() * (Math.log(item.getProbability()) / Math.log(2));
+            length += item.getProbability() * item.countOfBits();
+        }
+        return String.format("%.2f", (entropy / length) * 100);
     }
 
     private String underline(String value) {
