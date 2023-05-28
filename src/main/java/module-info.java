@@ -5,4 +5,6 @@ module com.example.codingcalculator {
 
     opens com.tpavlik.codingcalculator to javafx.fxml;
     exports com.tpavlik.codingcalculator;
+    exports com.tpavlik.codingcalculator.shannonFano;
+    opens com.tpavlik.codingcalculator.shannonFano to javafx.fxml;
 }

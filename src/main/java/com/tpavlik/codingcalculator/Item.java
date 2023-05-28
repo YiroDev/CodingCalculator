@@ -10,8 +10,20 @@ public class Item implements Comparable<Item> {
 
     private String name;
 
+    private Item left;
+
+    private Item right;
+
     public Item(String name, Double probability) {
         this.name = name;
+        this.probability = probability;
+        this.bitArray = "";
+        this.resultBit = "";
+    }
+
+    public Item(Item left, Item right, Double probability) {
+        this.left = left;
+        this.right = right;
         this.probability = probability;
         this.bitArray = "";
         this.resultBit = "";
@@ -47,6 +59,22 @@ public class Item implements Comparable<Item> {
 
     public String getName() {
         return name;
+    }
+
+    public Item getLeft() {
+        return left;
+    }
+
+    public void setLeft(Item left) {
+        this.left = left;
+    }
+
+    public Item getRight() {
+        return right;
+    }
+
+    public void setRight(Item right) {
+        this.right = right;
     }
 
     @Override

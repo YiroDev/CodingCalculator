@@ -1,4 +1,7 @@
-package com.tpavlik.codingcalculator;
+package com.tpavlik.codingcalculator.shannonFano;
+
+import com.tpavlik.codingcalculator.CodingUtils;
+import com.tpavlik.codingcalculator.Item;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,13 +36,13 @@ public class ShannonFanoMethod {
             double firstResult = 0;
             double secondResult = 0;
 
-            double firstA = sumDouble(a);
-            double firstB = sumDouble(b);
+            double firstA = CodingUtils.sumDouble(a);
+            double firstB = CodingUtils.sumDouble(b);
 
             firstResult = Math.abs(firstA - firstB);
 
-            double secondA = sumDouble(a) + a.get(0).getProbability();
-            double secondB = sumDouble(b) - b.get(0).getProbability();
+            double secondA = CodingUtils.sumDouble(a) + a.get(0).getProbability();
+            double secondB = CodingUtils.sumDouble(b) - b.get(0).getProbability();
 
             secondResult = Math.abs(secondA - secondB);
 
@@ -71,35 +74,4 @@ public class ShannonFanoMethod {
         split(b);
     }
 
-    public double sumDouble(List<Item> items) {
-        return items.stream().map(Item::getProbability).mapToDouble(Double::doubleValue).sum();
-    }
-
-    public void validate(List<Item> items) throws Exception {
-        if (sumDouble(items) != 1.0f) {
-            throw new Exception("Sum of probabilities must be equal to 1");
-        }
-    }
-
-    public String codingLength(List<Item> items) {
-        double codingWordLength = 0;
-        for (Item item : items) {
-            codingWordLength += item.getProbability() * item.countOfBits();
-        }
-        return String.format("%.2f", codingWordLength);
-    }
-
-    public String codeEffectivity(List<Item> items) {
-        double entropy = 0;
-        double length = 0;
-        for (Item item : items) {
-            entropy -= item.getProbability() * (Math.log(item.getProbability()) / Math.log(2));
-            length += item.getProbability() * item.countOfBits();
-        }
-        return String.format("%.2f", (entropy / length) * 100);
-    }
-
-    private String underline(String value) {
-        return "\033[4m" + value + "\033[0m";
-    }
 }
