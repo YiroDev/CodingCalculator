@@ -1,4 +1,4 @@
-package com.tpavlik.codingcalculator.shannonFano;
+package com.tpavlik.codingcalculator;
 
 import com.tpavlik.codingcalculator.CodingUtils;
 import com.tpavlik.codingcalculator.Item;

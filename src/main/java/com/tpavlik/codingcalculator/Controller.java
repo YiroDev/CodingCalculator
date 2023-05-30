@@ -1,6 +1,5 @@
 package com.tpavlik.codingcalculator;
 
-import com.tpavlik.codingcalculator.shannonFano.ShannonFanoMethod;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -99,7 +98,7 @@ public class Controller implements Initializable {
             visualResult.append(item);
             visualResult.append("\n");
 
-            result.append(item.getResultBit() + "\n");
+            result.append(item.getName() + ":\t" + item.getResultBit() + "\n");
         }
 
         setVisualResult(visualResult.toString());
@@ -130,8 +129,11 @@ public class Controller implements Initializable {
                 visualResult.append(String.format("%.2f", resultList[j][i].getProbability()) + " | ");
             }
             visualResult.append("\n");
-            result.append(resultList[0][i].getResultBit() + "\n");
-            dataList.add(resultList[0][i]);
+
+            Item item = resultList[0][i];
+
+            result.append(item.getName() + ":\t" + item.getResultBit() + "\n");
+            dataList.add(item);
         }
 
         setVisualResult(visualResult.toString());
