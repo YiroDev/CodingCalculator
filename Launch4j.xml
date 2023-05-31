@@ -2,7 +2,7 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
-  <jar>C:\Users\tpavlik\Desktop\MyProjects\CodingCalculator\out\artifacts\CodingCalculator_jar\CodingCalculator.jar</jar>
+  <jar>C:\MyProjects\CodingCalculator\out\artifacts\CodingCalculator_jar\CodingCalculator.jar</jar>
   <outfile>C:\Users\tpavlik\Desktop\CodingCalculator.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
@@ -13,7 +13,7 @@
   <stayAlive>false</stayAlive>
   <restartOnCrash>false</restartOnCrash>
   <manifest></manifest>
-  <icon>C:\Users\tpavlik\Desktop\MyProjects\CodingCalculator\src\main\resources\calculator.ico</icon>
+  <icon>C:\MyProjects\CodingCalculator\src\main\resources\calculator.ico</icon>
   <jre>
     <path>C:\Users\tpavlik\.jdks\openjdk-17.0.2</path>
     <requiresJdk>false</requiresJdk>
