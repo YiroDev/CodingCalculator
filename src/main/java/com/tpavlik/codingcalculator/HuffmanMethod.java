@@ -13,7 +13,7 @@ public class HuffmanMethod {
         resultList = new Item[items.size()][items.size()];
 
         sort(items);
-        split(items);
+        sumTwoLast(items);
         setBits(items);
 
         return resultList;
@@ -23,7 +23,7 @@ public class HuffmanMethod {
         Collections.sort(items);
     }
 
-    private void split(List<Item> items) {
+    private void sumTwoLast(List<Item> items) {
         sort(items);
 
         int count = items.size();
@@ -47,7 +47,7 @@ public class HuffmanMethod {
         items.add(newItem);
 
         column++;
-        split(items);
+        sumTwoLast(items);
     }
 
     private void setBits(List<Item> items) {

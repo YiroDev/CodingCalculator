@@ -1,8 +1,5 @@
 package com.tpavlik.codingcalculator;
 
-import com.tpavlik.codingcalculator.CodingUtils;
-import com.tpavlik.codingcalculator.Item;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
